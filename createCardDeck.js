@@ -38,8 +38,10 @@ const getDeck = () => {
         suit: suits[i]
       };
 
-      if (displayVal === 'Ace') {
+      if (j === 1) {
         card.val = 11;
+      } else if(j >= 11 && j <= 13) {
+        card.val = 10;
       }
 
       deck.push(card);
