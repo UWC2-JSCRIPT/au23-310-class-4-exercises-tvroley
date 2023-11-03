@@ -14,23 +14,11 @@ const getDeck = () => {
       // special cases for when j > 10
       let displayVal = '';
 
-      switch (j) {
-        case j === 1:
-          displayVal = 'Ace';
-          break;
-        case j > 1 && j <= 10:
-          displayVal = j;
-          break;
-        case j === 11:
-          displayVal = 'Jack';
-          break;
-        case j === 12:
-          displayVal = 'Queen';
-          break;
-        case j === 13:
-          displayVal = 'King';
-          break;
-      }
+      if(j === 1) { displayVal = 'Ace'; }
+      else if(j === 11) { displayVal = 'Jack'; }
+      else if(j === 12) { displayVal = 'Queen'; }
+      else if(j === 13) { displayVal = 'King'; }
+      else { displayVal = j; }
 
       const card = {
         val: j,
