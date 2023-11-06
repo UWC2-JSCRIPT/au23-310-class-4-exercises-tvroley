@@ -50,10 +50,15 @@ const calcPoints = (hand) => {
 //  * @param {Array} dealerHand Array of card objects with val, displayVal, suit properties
 //  * @returns {boolean} whether dealer should draw another card
 //  */
-// const dealerShouldDraw = (dealerHand) => {
-//   // CREATE FUNCTION HERE
+const dealerShouldDraw = (dealerHand) => {
+    const blackJackScore = calcPoints(dealerHand);
+    let draw = false;
+    if(blackJackScore.total < 17 || (blackJackScore === 17 && blackJackScore.isSoft)) {
+        draw = true;
+    }
 
-// }
+    return draw;
+}
 
 // /**
 //  * Determines the winner if both player and dealer stand
