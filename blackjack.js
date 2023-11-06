@@ -32,7 +32,7 @@ const calcPoints = (hand) => {
     let isSoft = false;
     let total = 0;
     
-    hand.array.forEach(card => {
+    hand.forEach(card => {
         if(card.displayVal === 'Ace' && card.val === 11) {
             isSoft = true;
         }
@@ -40,7 +40,7 @@ const calcPoints = (hand) => {
     });
     
     const blackJackScore = { total, isSoft };
-    
+
     return blackJackScore;
 }
 
@@ -69,9 +69,9 @@ const dealerShouldDraw = (dealerHand) => {
 const determineWinner = (playerScore, dealerScore) => {
     let winnerMesage = `Player score: ${playerScore}, Dealer score: ${dealerScore}, The winner is the `;
     if(playerScore > dealerScore) {
-        winnerMesage += playerScore;
+        winnerMesage += 'Player';
     } else {
-        winnerMesage += dealerScore;
+        winnerMesage += 'Dealer';
     }
 
     return winnerMesage;
