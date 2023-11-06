@@ -28,10 +28,21 @@ const player = new CardPlayer('Player');
 //  * @returns {number} blackJackScore.total
 //  * @returns {boolean} blackJackScore.isSoft
 //  */
-// const calcPoints = (hand) => {
-//   // CREATE FUNCTION HERE
-
-// }
+const calcPoints = (hand) => {
+    let isSoft = false;
+    let total = 0;
+    
+    hand.array.forEach(card => {
+        if(card.displayVal === 'Ace' && card.val === 11) {
+            isSoft = true;
+        }
+        total += card.val;
+    });
+    
+    const blackJackScore = { total, isSoft };
+    
+    return blackJackScore;
+}
 
 // /**
 //  * Determines whether the dealer should draw another card.
