@@ -66,10 +66,16 @@ const dealerShouldDraw = (dealerHand) => {
 //  * @param {number} dealerScore 
 //  * @returns {string} Shows the player's score, the dealer's score, and who wins
 //  */
-// const determineWinner = (playerScore, dealerScore) => {
-//   // CREATE FUNCTION HERE
+const determineWinner = (playerScore, dealerScore) => {
+    let winnerMesage = `Player score: ${playerScore}, Dealer score: ${dealerScore}, The winner is the `;
+    if(playerScore > dealerScore) {
+        winnerMesage += playerScore;
+    } else {
+        winnerMesage += dealerScore;
+    }
 
-// }
+    return winnerMesage;
+}
 
 // /**
 //  * Creates user prompt to ask if they'd like to draw a card
