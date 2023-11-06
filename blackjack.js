@@ -75,11 +75,16 @@ const dealerShouldDraw = (dealerHand) => {
 //  * @returns {string} Shows the player's score, the dealer's score, and who wins
 //  */
 const determineWinner = (playerScore, dealerScore) => {
-    let winnerMesage = `Player score: ${playerScore}, Dealer score: ${dealerScore}, The winner is the `;
-    if(playerScore > dealerScore) {
-        winnerMesage += 'Player';
+    let winnerMesage = `Player score: ${playerScore}, Dealer score: ${dealerScore}, `;
+    if(playerScore === dealerScore) {
+        winnerMesage += 'Push';
     } else {
-        winnerMesage += 'Dealer';
+        winnerMesage += `The winner is the `; 
+        if(playerScore > dealerScore) {
+            winnerMesage += 'Player';
+        } else {
+            winnerMesage += 'Dealer';
+        }
     }
 
     return winnerMesage;
