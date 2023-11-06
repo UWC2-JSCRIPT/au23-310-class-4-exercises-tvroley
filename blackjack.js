@@ -33,11 +33,19 @@ const calcPoints = (hand) => {
     let total = 0;
     
     hand.forEach(card => {
-        if(card.displayVal === 'Ace' && card.val === 11) {
+        let cardValue = card.val;
+        if(isSoft && card.displayVal === 'Ace' && card.val === 11) {
+            cardValue = 1;
+        } else if(card.displayVal === 'Ace' && card.val === 11) {
             isSoft = true;
         }
-        total += card.val;
+        total += cardValue;
     });
+
+    if(total > 21 && isSoft) {
+        total -= 10;
+        isSoft = false;
+    }
     
     const blackJackScore = { total, isSoft };
 
