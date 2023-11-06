@@ -23,8 +23,8 @@ const cards = [
  */
 const cardsWorthTen = cards => {
   const tens = cards.filter((card) => card.val === 10);
-  let displayVal = '';
-  tens.forEach((card) => displayVal += `${card.displayVal}, `);
+  const tenDisplayVals = tens.map((ten) => ten.displayVal);
+  const displayVal = tenDisplayVals.join(', ');
 
   return displayVal;
 };
