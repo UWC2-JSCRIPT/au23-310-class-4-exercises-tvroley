@@ -59,9 +59,9 @@ const cards = [
  * @param {array} deck A deck of cards
  */
 const logCardDeck = deck => {
-  deck.forEach((card) => {
+  for (let card of deck) {
     console.log(`The ${card.displayVal} of ${card.suit} has a value of ${card.val}`);
-  });
+  }
 };
 
 logCardDeck(cards);
