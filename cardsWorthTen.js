@@ -21,7 +21,13 @@ const cards = [
  * @param {array} cards
  * @return {string} displayVal
  */
-const cardsWorthTen = cards => {};
+const cardsWorthTen = cards => {
+  const tens = cards.filter((card) => card.val === 10);
+  const tenDisplayVals = tens.map((ten) => ten.displayVal);
+  const displayVal = tenDisplayVals.join(', ');
+
+  return displayVal;
+};
 
 console.log(cardsWorthTen(cards));
 // should return/log "10, Jack, Queen, King"
